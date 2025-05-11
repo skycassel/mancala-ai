@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mancala Game</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <div class="game-container">
+            <h1>Mancala Game</h1>
+            
+            <div class="settings-panel">
+                <div class="difficulty-selector">
+                    <label for="difficulty">AI Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                        <option value="expert">Expert</option>
+                    </select>
+                </div>
+                <div class="theme-selector">
+                    <label for="theme">Board Theme:</label>
+                    <select id="theme">
+                        <option value="classic" selected>Classic Wood</option>
+                        <option value="modern">Modern</option>
+                        <option value="desert">Desert Sand</option>
+                        <option value="ocean">Ocean Blue</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="mancala-board">
+                <div class="player-info player2-info">
+                    <div class="player-name">Player 2 (AI)</div>
+                </div>
+                
+                <div class="mancala" id="player2-mancala">
+                    <span class="stone-count">0</span>
+                </div>
+                
+                <div class="pits">
+                    <!-- Player 2's pits (top row)-->
+                    <div class="row player2">
+                        <div id="p2-5" class="pit" data-index="12">
+                            <div class="stones">
+                                <span class="stone-count">4</span>
+                            </div>
+                        </div>
+                        <div id="p2-4" class="pit" data-index="11">
+                            <div class="stones">
+                                <span class="stone-count">4</span>
+                            </div>
+                        </div>
+                        <div id="p2-3" class="pit" data-index="10">
+                            <div class="stones">
+                                <span class="stone-count">4</span>
+                            </div>
+                        </div>
+                        <div id="p2-2" class="pit" data-index="9">
+                            <div class="stones">
+                                <span class="stone-count">4</span>
+                            </div>
+                        </div>
+                        <div id="p2-1" class="pit" data-index="8">
+                            <div class="stones">
+                                <span class="stone-count">4</span>
+                            </div>
+                        </div>
+                        <div id="p2-0" class="pit" data-index="7">
+                            <div class="stones">
+                                <span class="stone-count">4</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Player 1's pits (bottom row)-->
+                    <div class="row player1">
+                        <div id="p1-0" class="pit" data-index="0">
+                            <div class="stones">
+                                <span class="stone-count">4</span>
+                            </div>
+                        </div>
+                        <div id="p1-1" class="pit" data-index="1">
+                            <div class="stones">
+                                <span class="stone-count">4</span>
+                            </div>
+                        </div>
+                        <div id="p1-2" class="pit" data-index="2">
+                            <div class="stones">
+                                <span class="stone-count">4</span>
+                            </div>
+                        </div>
+                        <div id="p1-3" class="pit" data-index="3">
+                            <div class="stones">
+                                <span class="stone-count">4</span>
+                            </div>
+                        </div>
+                        <div id="p1-4" class="pit" data-index="4">
+                            <div class="stones">
+                                <span class="stone-count">4</span>
+                            </div>
+                        </div>
+                        <div id="p1-5" class="pit" data-index="5">
+                            <div class="stones">
+                                <span class="stone-count">4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mancala" id="player1-mancala">
+                    <span class="stone-count">0</span>
+                </div>
+                
+                <div class="player-info player1-info">
+                    <div class="player-name">Player 1 (You)</div>
+                </div>
+            </div>
+            
+            <div class="game-info">
+                <p id="current-player"><i class="fas fa-user-circle"></i> Current player: Player 1</p>
+                <div class="button-row">
+                    <button id="restart"><i class="fas fa-redo"></i> Restart Game</button>
+                    <button id="help-btn"><i class="fas fa-question-circle"></i> How to Play</button>
+                </div>
+            </div>
+            
+            <div id="help-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>How to Play Mancala</h2>
+                    <div class="rules">
+                        <ol>
+                            <li>The goal is to collect more stones than your opponent.</li>
+                            <li>On your turn, select one of your pits to pick up all stones from it.</li>
+                            <li>Moving counter-clockwise, distribute the stones one by one into each pit, including your mancala (the large pit on your right). Skip your opponent's mancala when distributing stones.</li>
+                            <li>If your last stone lands in your own mancala, you get another turn.</li>
+                            <li>If your last stone lands in an empty pit on your side, you capture that stone and all stones in the opposite pit.</li>
+                            <li>The game ends when all pits on one side are empty.</li>
+                            <li>Any remaining stones go to the player who owns that side.</li>
+                            <li>The player with the most stones in their mancala wins!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="aiPlayer.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
