@@ -300,12 +300,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // For a valid pit index between 0-12 (excluding mancalas), opposite is (12 - index)
         oppPit = landedInOwnPit ? 12-currPit : -1;
 
-        console.log(`Last stone landed in pit ${currPit}`);
-        console.log(`Opposite pit calculated as ${oppPit}`);
-        console.log(`Stones in landed pit: ${gameState.board[currPit]}`);
-        console.log(`Stones in opposite pit: ${gameState.board[oppPit]}`);
-        console.log(`*********************************`);
-
         if (landedInOwnPit && gameState.board[currPit] == 1 && oppPit >= 0 && gameState.board[oppPit] > 0) {
             // Reset stone positions for captured pits
             gameState.stonePositions[currPit] = [];
