@@ -13,4 +13,4 @@ This was a beginner project for me in terms of frontend development, so I decide
 This project was incredibly valuable to me in terms of learning how to work with frontend and full stack development. Although I had coded in HTML and CSS before, I had never built a complete website that integrated the two with Javascript code. Much of my time spent on this final was spent learning how to integrate these different languages and frameworks, and it has given me a deeper understanding of how to design the frontend so that the backend can do its job more efficiently. I look forward to learning more advanced Javascript frameworks and improving the graphics of the game even further, as well as the possibility of considering other common AI search and learning algorithms to implement for different levels of opponent difficulty.
 
 ## How To Run:
-Click on the blue link directly under the "About" tab on the right. It should say say "skycassel.github.io/".
+Click on the blue link directly under the "About" tab on the right. It should say say "skycassel.github.io/mancala-ai/".
